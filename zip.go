@@ -7,6 +7,14 @@ import (
 	"path/filepath"
 )
 
+func isPpt(path string) bool {
+	e := filepath.Ext(path)
+	if e == ".ppt" || e == ".pptx" {
+		return true
+	}
+	return false
+}
+
 func unzip(archive, target string) error {
 	reader, err := zip.OpenReader(archive)
 	if err != nil {

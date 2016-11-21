@@ -29,10 +29,10 @@ func main() {
 			files := listFiles(c.String("path"))
 			search(files, c.String("word"))
 			for _, file := range files {
-				fmt.Println(file)
+				if isPpt(file) {
+					fmt.Println(file)
+				}
 			}
-		} else {
-
 		}
 		return nil
 	}

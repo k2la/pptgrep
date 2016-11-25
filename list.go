@@ -24,7 +24,3 @@ func listFiles(searchPath string) []string {
 	}
 	return files
 }
-
-func search(files []string, searchPath string) {
-
-}

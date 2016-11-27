@@ -1,6 +1,9 @@
 # pptgrep
 
 This tool can search `ppt` files which have an input word.
+
+## Note
+
 An input word is only English.
 
 ## Installation

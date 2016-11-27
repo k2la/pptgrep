@@ -6,6 +6,8 @@ import (
 	"regexp"
 )
 
+var slide = regexp.MustCompile(filepath.Join("ppt", "slides", "slide"))
+
 func isPpt(path string) bool {
 	e := filepath.Ext(path)
 	if e == ".ppt" || e == ".pptx" {
@@ -21,7 +23,7 @@ func isContain(archive, word string) bool {
 	}
 
 	for _, file := range reader.File {
-		if file.Name == "docProps/app.xml" {
+		if slide.MatchString(file.Name) {
 			fileReader, err := file.Open()
 			if err != nil {
 				return false
@@ -33,7 +35,9 @@ func isContain(archive, word string) bool {
 			fileReader.Read(p)
 			defer fileReader.Close()
 			r := regexp.MustCompile(word)
-			return r.MatchString(string(p))
+			if r.MatchString(string(p)) {
+				return true
+			}
 		}
 	}
 	return false

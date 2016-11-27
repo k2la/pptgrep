@@ -2,6 +2,7 @@ package main
 
 import (
 	"archive/zip"
+	"fmt"
 	"io"
 	"os"
 	"path/filepath"
@@ -27,6 +28,7 @@ func unzip(archive, target string) error {
 
 	for _, file := range reader.File {
 		path := filepath.Join(target, file.Name)
+		fmt.Println(path)
 		if file.FileInfo().IsDir() {
 			os.MkdirAll(path, file.Mode())
 			continue

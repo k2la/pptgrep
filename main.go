@@ -27,7 +27,6 @@ func main() {
 	app.Action = func(c *cli.Context) error {
 		if c.String("word") != "" {
 			files := listFiles(c.String("path"))
-			search(files, c.String("word"))
 			for _, file := range files {
 				if isPpt(file) {
 					fmt.Println(file)

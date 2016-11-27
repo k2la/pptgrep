@@ -13,7 +13,7 @@ func TestIsPpt(t *testing.T) {
 
 func TestContainWord(t *testing.T) {
 	archive, _ := filepath.Abs("./test.pptx")
-	if !isContain(archive, "GOOGLE") {
+	if !containWord(archive, "GOOGLE") {
 		t.Errorf("test.pptx has google")
 	}
 }

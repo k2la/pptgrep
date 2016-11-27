@@ -34,6 +34,8 @@ func main() {
 					}
 				}
 			}
+		} else {
+			fmt.Println(`Please look at usage. ( $ ./pptgrep -h )`)
 		}
 		return nil
 	}

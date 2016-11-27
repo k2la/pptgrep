@@ -2,6 +2,11 @@
 
 This tool can search `ppt` files which have an input word.
 
+## Installation
+```
+$ go get github.com/k2la/pptgrep
+```
+
 ## Usage
 
 ```

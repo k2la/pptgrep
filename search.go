@@ -16,7 +16,7 @@ func isPpt(path string) bool {
 	return false
 }
 
-func isContain(archive, word string) bool {
+func containWord(archive, word string) bool {
 	reader, err := zip.OpenReader(archive)
 	if err != nil {
 		return false

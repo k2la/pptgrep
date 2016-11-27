@@ -29,7 +29,7 @@ func main() {
 			files := listFiles(c.String("path"))
 			for _, file := range files {
 				if isPpt(file) {
-					if isContain(file, c.String("word")) {
+					if containWord(file, c.String("word")) {
 						fmt.Println(file)
 					}
 				}

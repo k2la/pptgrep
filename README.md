@@ -8,7 +8,7 @@ An input word is only English.
 
 ## Installation
 ```
-$ go get gaithub.com/k2la/pptgrep
+$ go get github.com/k2la/pptgrep
 ```
 
 ## Usage

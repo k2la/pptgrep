@@ -28,10 +28,7 @@ func containWord(archive, word string) bool {
 			if err != nil {
 				return false
 			}
-			p := []byte{}
-			for i := int64(0); i < file.FileInfo().Size(); i++ {
-				p = append(p, 0)
-			}
+			var p = make([]byte, file.FileInfo().Size())
 			fileReader.Read(p)
 			defer fileReader.Close()
 			r := regexp.MustCompile(word)

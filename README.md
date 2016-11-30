@@ -51,3 +51,12 @@ $ ./pptgrep -w APPLE -p ~
 /home/k2la/test2.pptx
 /home/k2la/test3.pptx
 ```
+
+Searching recursively
+
+```
+$ ./pptgrep -w Docker -r -p ~/Downloads
+/home/k2la/Downloads/docker/test.pptx
+/home/k2la/Downloads/docker/test02.pptx
+/home/k2la/Downloads/slide0706/test.pptx
+```

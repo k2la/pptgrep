@@ -15,7 +15,7 @@ $ go get github.com/k2la/pptgrep
 
 ```
 NAME:
-   pptgrep - Searching ppt files which have an input word
+   pptgrep - Searching PPTfile which has an input word
 
 USAGE:
    pptgrep [global options] command [command options] [arguments...]
@@ -29,6 +29,7 @@ COMMANDS:
 GLOBAL OPTIONS:
    --word value, -w value  Searching files which has the word
    --path value, -p value  Starting point (default: ".")
+   -r                      Searching Recursively
    --help, -h              show help
    --version, -v           print the version
 ```

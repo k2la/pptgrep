@@ -2,8 +2,8 @@ BINARY := pptgrep
 LDFLAGS := -ldflags="-s -w"
 
 bin:	
-	GOOS=windows GOARCH=amd64 go build $(LDFLAGS)
-	GOOS=darwin GOARCH=amd64 go build $(LDFLAGS) -o pptgrep_x
-	GOOS=linux GOARCH=amd64 go build $(LDFLAGS) -o pptgrep_l
+	GOOS=windows GOARCH=amd64 go build $(LDFLAGS) -o ./bin/windows/$(BINARY).exe
+	GOOS=darwin GOARCH=amd64 go build $(LDFLAGS) -o ./bin/mac/$(BINARY)
+	GOOS=linux GOARCH=amd64 go build $(LDFLAGS) -o ./bin/linux/$(BINARY)
 clean:
-	rm -f pptgrep*
+	rm -rf ./bin

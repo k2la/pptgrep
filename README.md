@@ -35,14 +35,14 @@ GLOBAL OPTIONS:
 Input only a word
 
 ```
-$ ./pptgrep -w GOOGLE
+$ pptgrep -w GOOGLE
 /home/k2la/test.pptx
 ```
 
 Input a word and a starting point
 
 ```
-$ ./pptgrep -w APPLE -p ~
+$ pptgrep -w APPLE -p ~
 /home/k2la/test1.pptx
 /home/k2la/test2.pptx
 /home/k2la/test3.pptx
@@ -51,7 +51,7 @@ $ ./pptgrep -w APPLE -p ~
 Searching recursively
 
 ```
-$ ./pptgrep -w Docker -r -p ~/Downloads
+$ pptgrep -w Docker -r -p ~/Downloads
 /home/k2la/Downloads/docker/test.pptx
 /home/k2la/Downloads/docker/test02.pptx
 /home/k2la/Downloads/slide0706/test.pptx

@@ -6,7 +6,7 @@ import (
 	"regexp"
 )
 
-var slide = regexp.MustCompile(filepath.Join("ppt", "slides", "slide"))
+var slide = regexp.MustCompile("ppt/slides/slide")
 
 func isPpt(path string) bool {
 	e := filepath.Ext(path)

@@ -1,12 +1,27 @@
 BINARY := pptgrep
 LDFLAGS := -ldflags="-s -w"
 
-bin:
-	GOOS=windows GOARCH=386 go build $(LDFLAGS) -o ./bin/windows386/$(BINARY).exe
-	GOOS=windows GOARCH=amd64 go build $(LDFLAGS) -o ./bin/windows64/$(BINARY).exe
-	GOOS=darwin GOARCH=386 go build $(LDFLAGS) -o ./bin/mac386/$(BINARY)
-	GOOS=darwin GOARCH=amd64 go build $(LDFLAGS) -o ./bin/mac64/$(BINARY)
-	GOOS=linux GOARCH=386 go build $(LDFLAGS) -o ./bin/linux386/$(BINARY)
-	GOOS=linux GOARCH=amd64 go build $(LDFLAGS) -o ./bin/linux64/$(BINARY)
+.PHONY: bin
+bin: deps
+	for os in darwin linux windows; do \
+	  for arch in amd64 386; do \
+	    GOOS=$$os GOARCH=$$arch CGO_ENABLED=0 go build -a -tags netgo -installsuffix netgo $(LDFLAGS) -o bin/$$os-$$arch/$(BINARY); \
+	  done; \
+	done
+
+.PHONY: clean
 clean:
-	rm -rf ./bin
+	rm -rf bin/*
+	rm -rf vendor/*
+
+.PHONY: deps
+deps:
+	glide install
+
+.PHONY: install
+install:
+	go install $(LDFLAGS)
+
+.PHONY: test
+test:
+	go test -cover -v `glide novendor`

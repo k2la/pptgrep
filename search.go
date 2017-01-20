@@ -10,7 +10,7 @@ var slide = regexp.MustCompile("ppt/slides/slide")
 
 func isPpt(path string) bool {
 	e := filepath.Ext(path)
-	if e == ".ppt" || e == ".pptx" {
+	if e == ".pptx" {
 		return true
 	}
 	return false

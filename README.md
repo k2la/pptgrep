@@ -1,6 +1,6 @@
 # pptgrep
 
-This tool can search `ppt` files which have an input word.
+This tool can search `pptx` files which have an input word.
 
 ## Installation
 ```

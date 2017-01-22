@@ -7,6 +7,12 @@ This tool can search `pptx` files which have an input word.
 $ go get github.com/k2la/pptgrep
 ```
 
+## Cross-Compile
+Use Makefile. If you have installed `glide`, use `make deps` before `make`
+```
+$ make
+```
+
 ## Usage
 
 ```

@@ -8,7 +8,7 @@ $ go get github.com/k2la/pptgrep
 ```
 
 ## Cross-Compile
-Use Makefile. If you have installed `glide`, use `make deps` before `make`
+Use Makefile. If you have installed `glide`, run `make deps` before `make`
 ```
 $ make
 ```
